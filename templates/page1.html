@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
 	<link rel="stylesheet" href="{{url_for('static', filename='start.css')}}">
 	</head>
 	<body>
@@ -21,22 +21,31 @@
 		<p class = "head">
 			Usage By State
 		</p>
-		<p class = "selector">
-			<form action="/page1">
-				<select name="state">
-					{{options1}}
-				</select>
-			<input type="submit">
-			</form>
-		</p>
-		<p class="info">
+		<div class="grid-item1">
+		<form action="/page1">
+		<div class="input-group">
+	
+			<select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" name="state">
+			<option selected>State...</option>
+			{{options1}}
+			</select>
+		<div class="input-group-append">
+			<button class="btn btn-outline-secondary" type="submit">Button</button>
+		</div>
+		</div>
+		</form>
+		</div>
+		<div class="grid-item2">
 			<p class="state">
 				{{selectedState}}
 			</p>
-			<p class="facts">
+			<p class="pop">
 				{{overallpop}}
-				<br>
-				<br>
+			</p>
+		</div>
+			
+		<div class="grid-item">
+			<p class="info">
 				{{newMar}}
 				<br>
 				<br>
@@ -47,8 +56,10 @@
 				<br>
 				<br>
 				{{perMar}}
-				<br>
-				<br>
+				</p>
+			</div>
+			<div class="grid-item">
+				<p class="info">
 				{{newTob}}
 				<br>
 				<br>
@@ -56,8 +67,10 @@
 				<br>
 				<br>
 				{{perTob}}
-				<br>
-				<br>
+				</p>
+			</div>
+			<div class="grid-item">
+				<p class="info">
 				{{abuAlc}}
 				<br>
 				<br>
@@ -71,7 +84,7 @@
 				<br>
 				<br>
 				{{treAlc}}
-			</p>
-		</p>
+				</p>
+				</div>
 	</body>
 </html>
