@@ -19,7 +19,11 @@ def render_page1():
         newTob=newTob_by_state(drugs,state) , monTob=monTob_by_state(drugs,state) , perTob=perTob_by_state(drugs,state) ,
         abuAlc=abuAlc_by_state(drugs,state) , monAlc=monAlc_by_state(drugs,state) , perAlc=perAlc_by_state(drugs,state) , depAlc=depAlc_by_state(drugs,state) , treAlc=treAlc_by_state(drugs,state))
     else:
-        return render_template("page1.html" , options1=get_all_states(drugs))
+        state="State..."
+        return render_template("page1.html" , options1=get_all_states(drugs), selectedState="State...", overallpop=pop_by_state(drugs,state) , 
+        newMar=newMar_by_state(drugs,state) , monMar=monMar_by_state(drugs,state) , yearMar=yearMar_by_state(drugs,state) , perMar=perMar_by_state(drugs,state) , 
+        newTob=newTob_by_state(drugs,state) , monTob=monTob_by_state(drugs,state) , perTob=perTob_by_state(drugs,state) ,
+        abuAlc=abuAlc_by_state(drugs,state) , monAlc=monAlc_by_state(drugs,state) , perAlc=perAlc_by_state(drugs,state) , depAlc=depAlc_by_state(drugs,state) , treAlc=treAlc_by_state(drugs,state))
 
 def get_all_states(drugs):
     options1=""
