@@ -27,4 +27,12 @@
 	height:38vh;
 }
 
+.collapse.navbar-collapse{
+	background-color:transparent;
+}
+
+.spec, html{
+	padding:15px;
+	background:rgb(240,240,240);
+}
 
