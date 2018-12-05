@@ -9,10 +9,7 @@
 	font-size:130%;
 }
 
-.grid-item , .grid-item2 {
-	border: 3px solid rgba(0,0,0);
-	margin-bottom: 10px;
-}
+
 
 .info , .state , .pop, .head{
 	padding: 5px;
