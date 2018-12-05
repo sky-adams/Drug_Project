@@ -9,7 +9,10 @@
 	font-size:130%;
 }
 
-
+.grid-item{
+	border: 3px solid rgba(0,0,0);
+	margin-bottom: 10px;
+}
 
 .info , .state , .pop, .head{
 	padding: 5px;
@@ -35,20 +38,6 @@
 	font-size:110%;
 }
 
-.info{
-	border-bottom:3px solid rgba(0,0,0);
-	border-left:3px solid rgba(0,0,0);
-	border-right:3px solid rgba(0,0,0);
-	margin-bottom:5px;
-}
-
-.sub{
-	border-top:3px solid rgba(0,0,0);
-	border-left:3px solid rgba(0,0,0);
-	border-right:3px solid rgba(0,0,0);
-	margin:0px;
-	padding:5px;
-}
 
 .spec{
 	background:rgb(240,240,240);
