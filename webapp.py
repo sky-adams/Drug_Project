@@ -15,15 +15,15 @@ def render_page1():
     if "state" in request.args:
         state = request.args['state']
         return render_template("page1.html" , options1=get_all_states(drugs) , selectedState=state, overallpop=pop_by_state(drugs,state) , 
-        newMar=newMar_by_state(drugs,state) , monMar=monMar_by_state(drugs,state) , yearMar=yearMar_by_state(drugs,state) , perMar=perMar_by_state(drugs,state) , 
-        newTob=newTob_by_state(drugs,state) , monTob=monTob_by_state(drugs,state) , perTob=perTob_by_state(drugs,state) ,
-        abuAlc=abuAlc_by_state(drugs,state) , monAlc=monAlc_by_state(drugs,state) , perAlc=perAlc_by_state(drugs,state) , depAlc=depAlc_by_state(drugs,state) , treAlc=treAlc_by_state(drugs,state))
+        newMarP=newMarP_by_state(drugs,state) , monMarP=monMarP_by_state(drugs,state) , yearMarP=yearMarP_by_state(drugs,state) , perMarP=perMarP_by_state(drugs,state) , 
+        newTobP=newTobP_by_state(drugs,state) , monTobP=monTobP_by_state(drugs,state) , perTobP=perTobP_by_state(drugs,state) ,
+        abuAlcP=abuAlcP_by_state(drugs,state) , monAlcP=monAlcP_by_state(drugs,state) , perAlcP=perAlcP_by_state(drugs,state) , depAlcP=depAlcP_by_state(drugs,state) , treAlcP=treAlcP_by_state(drugs,state))
     else:
         state="State..."
-        return render_template("page1.html" , options1=get_all_states(drugs), selectedState="State...", overallpop=pop_by_state(drugs,state) , 
-        newMar=newMar_by_state(drugs,state) , monMar=monMar_by_state(drugs,state) , yearMar=yearMar_by_state(drugs,state) , perMar=perMar_by_state(drugs,state) , 
-        newTob=newTob_by_state(drugs,state) , monTob=monTob_by_state(drugs,state) , perTob=perTob_by_state(drugs,state) ,
-        abuAlc=abuAlc_by_state(drugs,state) , monAlc=monAlc_by_state(drugs,state) , perAlc=perAlc_by_state(drugs,state) , depAlc=depAlc_by_state(drugs,state) , treAlc=treAlc_by_state(drugs,state))
+        return render_template("page1.html" , options1=get_all_states(drugs) , selectedState="State...", overallpop=pop_by_state(drugs,state) , 
+        newMarP=newMarP_by_state(drugs,state) , monMarP=monMarP_by_state(drugs,state) , yearMarP=yearMarP_by_state(drugs,state) , perMarP=perMarP_by_state(drugs,state) , 
+        newTobP=newTobP_by_state(drugs,state) , monTobP=monTobP_by_state(drugs,state) , perTobP=perTobP_by_state(drugs,state) ,
+        abuAlcP=abuAlcP_by_state(drugs,state) , monAlcP=monAlcP_by_state(drugs,state) , perAlcP=perAlcP_by_state(drugs,state) , depAlcP=depAlcP_by_state(drugs,state) , treAlcP=treAlcP_by_state(drugs,state))
 
 def get_all_states(drugs):
     options1=""
@@ -42,66 +42,66 @@ def pop_by_state(drugs,state):
 
             
             
-def newMar_by_state(drugs,state):
+def newMarP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "New Marijuana users (past year): " + str(x["Totals"]["Marijuana"]["New Users"]["12-17"] + x["Totals"]["Marijuana"]["New Users"]["18-25"] + x["Totals"]["Marijuana"]["New Users"]["26+"])
 
-def monMar_by_state(drugs,state):
+def monMarP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Marijuana use past month: " + str(x["Totals"]["Marijuana"]["Used Past Month"]["12-17"] + x["Totals"]["Marijuana"]["Used Past Month"]["18-25"] + x["Totals"]["Marijuana"]["Used Past Month"]["26+"])
 
-def yearMar_by_state(drugs,state):
+def yearMarP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Marijuana use past year: " + str(x["Totals"]["Marijuana"]["Used Past Year"]["12-17"] + x["Totals"]["Marijuana"]["Used Past Year"]["18-25"] + x["Totals"]["Marijuana"]["Used Past Year"]["26+"])
             
-def perMar_by_state(drugs,state):
+def perMarP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Populations Marijuana perception of risk: " + str(x["Totals"]["Marijuana"]["Perceptions of Risk"]["12-17"] + x["Totals"]["Marijuana"]["Perceptions of Risk"]["18-25"] + x["Totals"]["Marijuana"]["Perceptions of Risk"]["26+"])
 
             
             
-def newTob_by_state(drugs,state):
+def newTobP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "New Tobacco users (past year): " + str(x["Totals"]["Tobacco"]["Cigarette Past Month"]["12-17"] + x["Totals"]["Tobacco"]["Cigarette Past Month"]["18-25"] + x["Totals"]["Tobacco"]["Cigarette Past Month"]["26+"])
 
-def monTob_by_state(drugs,state):
+def monTobP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Tobacco use past month: " + str(x["Totals"]["Tobacco"]["Use Past Month"]["12-17"] + x["Totals"]["Tobacco"]["Use Past Month"]["18-25"] + x["Totals"]["Tobacco"]["Use Past Month"]["26+"])
             
-def perTob_by_state(drugs,state):
+def perTobP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Populations Tobacco perception of risk: " + str(x["Totals"]["Tobacco"]["Perceptions of Risk"]["12-17"] + x["Totals"]["Tobacco"]["Perceptions of Risk"]["18-25"] + x["Totals"]["Tobacco"]["Perceptions of Risk"]["26+"])
 
             
             
-def abuAlc_by_state(drugs,state):
+def abuAlcP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Alcohol abuse (past year): " + str(x["Totals"]["Alcohol"]["Abuse Past Year"]["12-17"] + x["Totals"]["Alcohol"]["Abuse Past Year"]["18-25"] + x["Totals"]["Alcohol"]["Abuse Past Year"]["26+"])
 
-def depAlc_by_state(drugs,state):
+def depAlcP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Alcohol dependency: " + str(x["Totals"]["Alcohol"]["Dependence Past Year"]["12-17"] + x["Totals"]["Alcohol"]["Dependence Past Year"]["18-25"] + x["Totals"]["Alcohol"]["Dependence Past Year"]["26+"])
 
-def monAlc_by_state(drugs,state):
+def monAlcP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Monthly Alcohol use : " + str(x["Totals"]["Alcohol"]["Use Past Month"]["12-17"] + x["Totals"]["Alcohol"]["Use Past Month"]["18-25"] + x["Totals"]["Alcohol"]["Use Past Month"]["26+"])
             
-def perAlc_by_state(drugs,state):
+def perAlcP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Populations Alcohol perception of risk: " + str(x["Totals"]["Alcohol"]["Perceptions of Risk"]["12-17"] + x["Totals"]["Alcohol"]["Perceptions of Risk"]["18-25"] + x["Totals"]["Alcohol"]["Perceptions of Risk"]["26+"])
 
-def treAlc_by_state(drugs,state):
+def treAlcP_by_state(drugs,state):
     for x in drugs:
         if state==x["State"]:
             return "Need Treatment for Alcohol (past year): " + str(x["Totals"]["Alcohol"]["Need Treatment Past Year"]["12-17"] + x["Totals"]["Alcohol"]["Need Treatment Past Year"]["18-25"] + x["Totals"]["Alcohol"]["Need Treatment Past Year"]["26+"])
