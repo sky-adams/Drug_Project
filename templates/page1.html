@@ -8,13 +8,10 @@
       <link rel="stylesheet" href="{{url_for('static', filename='start.css')}}">
    </head>
    <body>
-    <div class="spec">
+      <div class="spec">
          <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Drug Use</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div id="navbarNav">
                <ul class="navbar-nav">
                   <li class="nav-item">
                      <a class="nav-link" href="/">Home </a>
@@ -59,7 +56,7 @@
          </div>
          <div class="row">
             <div class="col-sm">
-               <div class="grid-item">
+				<p class="sub">Marijuana Usage (people)</p>
                   <p class="info">
                      {{newMar}}
                      <br>
@@ -72,10 +69,9 @@
                      <br>
                      {{perMar}}
                   </p>
-               </div>
             </div>
             <div class="col-sm">
-               <div class="grid-item">
+			   <p class="sub">Tobacco Usage (people)</p>
                   <p class="info">
                      {{newTob}}
                      <br>
@@ -85,10 +81,9 @@
                      <br>
                      {{perTob}}
                   </p>
-               </div>
             </div>
             <div class="col-sm">
-               <div class="grid-item">
+				<p class="sub">Alcohol Usage (people)</p>
                   <p class="info">
                      {{abuAlc}}
                      <br>
@@ -104,10 +99,9 @@
                      <br>
                      {{treAlc}}
                   </p>
-               </div>
             </div>
          </div>
-	  </div>
+      </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
    </body>
