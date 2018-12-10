@@ -174,8 +174,6 @@ def treAlcO_by_state(drugs,state):
             
 @app.route("/page2")
 def render_page2():
-    with open('drugs.json') as drug_data:
-        drugs = json.load(drug_data)
     return render_template("page2.html")
 
     
