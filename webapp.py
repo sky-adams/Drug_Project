@@ -316,7 +316,11 @@ def treAlcO_by_state(drugs, state):
 
 @app.route('/page2')
 def render_page2():
-    return render_template('page2.html',options2=find_rates(drugs), data=get_data(drugs))
+    if 'rate' in request.args:
+        rate = request.args['rate']
+    else:
+        rate = 'Rate...'
+    return render_template('page2.html',options2=find_rates(drugs), data=get_data(drugs,rate))
 
 def find_rates(drugs):
     options2 = ''
@@ -338,8 +342,13 @@ def find_rates(drugs):
                            + '</option>')
     return options2
 
-def get_data(drugs):
-    return '{ x: 10, y: 71 },{ x: 20, y: 55 },{ x: 30, y: 50 },{ x: 40, y: 65 },{ x: 50, y: 92 },{ x: 60, y: 68 },{ x: 70, y: 38 },{ x: 80, y: 71 },{ x: 90, y: 54 },{ x: 100, y: 60 },{ x: 110, y: 36 },{ x: 120, y: 49 },{ x: 130, y: 21 }'
+def get_data(drugs,rate):
+    oneN="1"
+    oneS="error"
+    for x in drugs:
+        if rate==x:
+            oneN=x
+    return Markup('{ y: '+oneN +', label: "%s" },{ y: 7, label: "nothing" },{ y: 5, label: "Russia" },{ y: 9, label: "Spain" },{ y: 7, label: "Brazil" },{ y: 7, label: "India" },{ y: 9, label: "Italy" },{ y: 8, label: "Australia" },{ y: 11, label: "Canada" },{ y: 15, label: "South Korea" },{ y: 12, label: "Netherlands" },{ y: 15, label: "Switzerland" },{ y: 25, label: "Britain" },{ y: 28, label: "Germany" },{ y: 29, label: "France" },{ y: 52, label: "Japan" },{ y: 103, label: "China" },{ y: 134, label: "US" }' % (oneS))
 
 
 if __name__ == '__main__':
