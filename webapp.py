@@ -328,27 +328,25 @@ def find_rates(drugs):
     for x in drugs[0]["Rates"]["Illicit Drugs"]:
         if x not in listOfRates:
             listOfRates.append(str("Illicit Drugs " + x))
-    for x in drugs[0]["Rates"]["Marijuana"]:
-        if x not in listOfRates:
-            listOfRates.append(str("Marijuana " + x))        
-    for x in drugs[0]["Rates"]["Alcohol"]:
-        if x not in listOfRates:
-            listOfRates.append(str("Alcohol " + x))
-    for x in drugs[0]["Rates"]["Tobacco"]:
-        if x not in listOfRates:
-            listOfRates.append(str("Tobacco " + x))
-    for x in listOfRates:
         options2 += Markup('<option value="' + x + '">' + x
                            + '</option>')
     return options2
 
 def get_data(drugs,rate):
-    oneN="1"
+    fit=-1
+    oneN=-1
     oneS="error"
+    top18list = dict(number = oneN, state = oneS)
     for x in drugs:
-        if rate==x:
-            oneN=x
-    return Markup('{ y: '+oneN +', label: "%s" },{ y: 7, label: "nothing" },{ y: 5, label: "Russia" },{ y: 9, label: "Spain" },{ y: 7, label: "Brazil" },{ y: 7, label: "India" },{ y: 9, label: "Italy" },{ y: 8, label: "Australia" },{ y: 11, label: "Canada" },{ y: 15, label: "South Korea" },{ y: 12, label: "Netherlands" },{ y: 15, label: "Switzerland" },{ y: 25, label: "Britain" },{ y: 28, label: "Germany" },{ y: 29, label: "France" },{ y: 52, label: "Japan" },{ y: 103, label: "China" },{ y: 134, label: "US" }' % (oneS))
+        if rate in x["Rates"]["Illicit Drugs"]:
+            oneS=x["State"]
+            fit=x["Rates"]["Illicit Drugs"][rate]["26+"]
+            print(oneN)
+            float(oneN)
+            float(fit)
+            if fit > oneN: #or any of the others 
+                fit=oneN
+    return Markup('{ y: '+str(oneN) +', label: "%s" },{ y: 7, label: "nothing" },{ y: 5, label: "Russia" },{ y: 9, label: "Spain" },{ y: 7, label: "Brazil" },{ y: 7, label: "India" },{ y: 9, label: "Italy" },{ y: 8, label: "Australia" },{ y: 11, label: "Canada" },{ y: 15, label: "South Korea" },{ y: 12, label: "Netherlands" },{ y: 15, label: "Switzerland" },{ y: 25, label: "Britain" },{ y: 28, label: "Germany" },{ y: 29, label: "France" },{ y: 52, label: "Japan" },{ y: 103, label: "China" },{ y: 134, label: "US" }' % (oneS))
 
 
 if __name__ == '__main__':
