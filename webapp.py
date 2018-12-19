@@ -336,17 +336,100 @@ def get_data(drugs,rate):
     fit=-1
     oneN=-1
     oneS="error"
-    top18list = dict(number = oneN, state = oneS)
+    twoN=-1
+    twoS="error"
+    threeN=-1
+    threeS="error"
+    fourN=-1
+    fourS="error"
+    fiveN=-1
+    fiveS="error"
+    sixN=-1
+    sixS="error"
+    sevenN=-1
+    sevenS="error"
+    eightN=-1
+    eightS="error"
+    nineN=-1
+    nineS="error"
+    tenN=-1
+    tenS="error"
+    elevenN=-1
+    elevenS="error"
+    twelveN=-1
+    twelveS="error"
+    thirteenN=-1
+    thirteenS="error"
+    fourteenN=-1
+    fourteenS="error"
+    fifteenN=-1
+    fifteenS="error"
     for x in drugs:
-        if rate in x["Rates"]["Illicit Drugs"]:
-            oneS=x["State"]
+        if x["Year"]==2002:
             fit=x["Rates"]["Illicit Drugs"][rate]["26+"]
-            print(oneN)
-            float(oneN)
-            float(fit)
-            if fit > oneN: #or any of the others 
-                fit=oneN
-    return Markup('{ y: '+str(oneN) +', label: "%s" },{ y: 7, label: "nothing" },{ y: 5, label: "Russia" },{ y: 9, label: "Spain" },{ y: 7, label: "Brazil" },{ y: 7, label: "India" },{ y: 9, label: "Italy" },{ y: 8, label: "Australia" },{ y: 11, label: "Canada" },{ y: 15, label: "South Korea" },{ y: 12, label: "Netherlands" },{ y: 15, label: "Switzerland" },{ y: 25, label: "Britain" },{ y: 28, label: "Germany" },{ y: 29, label: "France" },{ y: 52, label: "Japan" },{ y: 103, label: "China" },{ y: 134, label: "US" }' % (oneS))
+            print(fit)
+            if float(fit) > float(oneN): #or any of the others
+                fifteenN=fourteenN
+                fifteenS=fourteenS
+                fourteenN=thirteenN
+                fourteenS=thirteenS
+                thirteenN=twelveN
+                thirteenS=twelveS
+                twelveN=elevenN
+                twelveS=tenS
+                elevenN=tenN
+                elevenS=tenS
+                tenN=nineN
+                tenS=nineS
+                nineN=eightN
+                nineS=eightS
+                eightN=sevenN
+                eightS=sevenS
+                sevenN=sixN
+                sevenS=sixS
+                sixN=fiveN
+                sixS=fiveS
+                fiveN=fourN
+                fiveS=fourS
+                fourN=threeN
+                fourS=threeS
+                threeN=twoN
+                threeS=twoS
+                twoN=oneN
+                twoS=oneS
+                oneN=fit
+                oneS=x["State"]
+            else:
+                if float(fit) > float(twoN): #or any of the others
+                    fifteenN=fourteenN
+                    fifteenS=fourteenS
+                    fourteenN=thirteenN
+                    fourteenS=thirteenS
+                    thirteenN=twelveN
+                    thirteenS=twelveS
+                    twelveN=elevenN
+                    twelveS=tenS
+                    elevenN=tenN
+                    elevenS=tenS
+                    tenN=nineN
+                    tenS=nineS
+                    nineN=eightN
+                    nineS=eightS
+                    eightN=sevenN
+                    eightS=sevenS
+                    sevenN=sixN
+                    sevenS=sixS
+                    sixN=fiveN
+                    sixS=fiveS
+                    fiveN=fourN
+                    fiveS=fourS
+                    fourN=threeN
+                    fourS=threeS
+                    threeN=twoN
+                    threeS=twoS
+                    twoN=oneN
+                    twoS=x["State"]
+    return Markup('{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" }' % (oneN,oneS,twoN,twoS,threeN,threeS,fourN,fourS,fiveN,fiveS,sixN,sixS,sevenN,sevenS,eightN,eightS,nineN,nineS,tenN,tenS,elevenN,elevenS,twelveN,twelveS,thirteenN,thirteenS,fourteenN,fourteenS,fifteenN,fifteenS))
 
 
 if __name__ == '__main__':
