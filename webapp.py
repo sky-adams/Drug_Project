@@ -530,7 +530,7 @@ def get_data(drugs,rate):
                                     sixN=fit
                                     sixS=x["State"]
                                 else:
-                                    if float(fit) > float(sixN): #or any of the others
+                                    if float(fit) > float(sevenN): #or any of the others
                                         fifteenN=fourteenN
                                         fifteenS=fourteenS
                                         fourteenN=thirteenN
@@ -550,7 +550,7 @@ def get_data(drugs,rate):
                                         sevenN=fit
                                         sevenS=x["State"]
                                     else:
-                                        if float(fit) > float(sixN): #or any of the others
+                                        if float(fit) > float(eightN): #or any of the others
                                             fifteenN=fourteenN
                                             fifteenS=fourteenS
                                             fourteenN=thirteenN
@@ -567,6 +567,48 @@ def get_data(drugs,rate):
                                             nineS=eightS
                                             eightN=fit
                                             eightS=x["State"]
+                                        else:
+                                            if float(fit) > float(nineN): #or any of the others
+                                                fifteenN=fourteenN
+                                                fifteenS=fourteenS
+                                                fourteenN=thirteenN
+                                                fourteenS=thirteenS
+                                                thirteenN=twelveN
+                                                thirteenS=twelveS
+                                                twelveN=elevenN
+                                                twelveS=tenS
+                                                elevenN=tenN
+                                                elevenS=tenS
+                                                tenN=nineN
+                                                tenS=nineS
+                                                nineN=fit
+                                                nineS=x["State"]
+                                            else:
+                                                if float(fit) > float(tenN): #or any of the others
+                                                    fifteenN=fourteenN
+                                                    fifteenS=fourteenS
+                                                    fourteenN=thirteenN
+                                                    fourteenS=thirteenS
+                                                    thirteenN=twelveN
+                                                    thirteenS=twelveS
+                                                    twelveN=elevenN
+                                                    twelveS=tenS
+                                                    elevenN=tenN
+                                                    elevenS=tenS
+                                                    tenN=fit
+                                                    tenS=x["State"]
+                                                else:
+                                                    if float(fit) > float(elevenN): #or any of the others
+                                                        fifteenN=fourteenN
+                                                        fifteenS=fourteenS
+                                                        fourteenN=thirteenN
+                                                        fourteenS=thirteenS
+                                                        thirteenN=twelveN
+                                                        thirteenS=twelveS
+                                                        twelveN=elevenN
+                                                        twelveS=tenS
+                                                        elevenN=fit
+                                                        elevenS=x["State"]
 
     return Markup('{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" }' % (oneN,oneS,twoN,twoS,threeN,threeS,fourN,fourS,fiveN,fiveS,sixN,sixS,sevenN,sevenS,eightN,eightS,nineN,nineS,tenN,tenS,elevenN,elevenS,twelveN,twelveS,thirteenN,thirteenS,fourteenN,fourteenS,fifteenN,fifteenS))
 
