@@ -278,7 +278,7 @@ def depAlcO_by_state(drugs, state):
         if state == x['State']:
             return 'Alcohol dependency: ' + str(round((x['Rates'
                     ]['Alcohol']['Dependence Past Year']['12-17']
-                    + x['Rates']['Alcohol']['Dependence Past Year'
+                    + x['Rates']['Alcohol']['Dependence Past Year'#comment
                     ]['18-25'] + x['Rates']['Alcohol'
                     ]['Dependence Past Year']['26+']) / 3, 3))
 
