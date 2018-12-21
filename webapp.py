@@ -614,4 +614,4 @@ def get_data(drugs,rate):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=54321)
+    app.run(debug=False, port=54321)
