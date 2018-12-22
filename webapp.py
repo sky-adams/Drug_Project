@@ -13,7 +13,7 @@ def render_mainpage():
     return render_template('mainpage.html')
 
 
-@app.route('/page1' )
+@app.route('/page1')
 def render_page1():
 
     if 'state' in request.args:
@@ -278,7 +278,7 @@ def depAlcO_by_state(drugs, state):
         if state == x['State']:
             return 'Alcohol dependency: ' + str(round((x['Rates'
                     ]['Alcohol']['Dependence Past Year']['12-17']
-                    + x['Rates']['Alcohol']['Dependence Past Year'
+                    + x['Rates']['Alcohol']['Dependence Past Year'#comment
                     ]['18-25'] + x['Rates']['Alcohol'
                     ]['Dependence Past Year']['26+']) / 3, 3))
 
@@ -319,7 +319,7 @@ def render_page2():
     if 'rate' in request.args:
         rate = request.args['rate']
     else:
-        rate = 'Rate...'
+        rate="All Except Marijuana Used Past Month"
     return render_template('page2.html',options2=find_rates(drugs), data=get_data(drugs,rate))
 
 def find_rates(drugs):
@@ -427,10 +427,191 @@ def get_data(drugs,rate):
                     fourS=threeS
                     threeN=twoN
                     threeS=twoS
-                    twoN=oneN
+                    twoN=fit
                     twoS=x["State"]
+                else:
+                    if float(fit) > float(threeN): #or any of the others
+                        fifteenN=fourteenN
+                        fifteenS=fourteenS
+                        fourteenN=thirteenN
+                        fourteenS=thirteenS
+                        thirteenN=twelveN
+                        thirteenS=twelveS
+                        twelveN=elevenN
+                        twelveS=tenS
+                        elevenN=tenN
+                        elevenS=tenS
+                        tenN=nineN
+                        tenS=nineS
+                        nineN=eightN
+                        nineS=eightS
+                        eightN=sevenN
+                        eightS=sevenS
+                        sevenN=sixN
+                        sevenS=sixS
+                        sixN=fiveN
+                        sixS=fiveS
+                        fiveN=fourN
+                        fiveS=fourS
+                        fourN=threeN
+                        fourS=threeS
+                        threeN=fit
+                        threeS=x["State"]
+                    else:
+                        if float(fit) > float(fourN): #or any of the others
+                            fifteenN=fourteenN
+                            fifteenS=fourteenS
+                            fourteenN=thirteenN
+                            fourteenS=thirteenS
+                            thirteenN=twelveN
+                            thirteenS=twelveS
+                            twelveN=elevenN
+                            twelveS=tenS
+                            elevenN=tenN
+                            elevenS=tenS
+                            tenN=nineN
+                            tenS=nineS
+                            nineN=eightN
+                            nineS=eightS
+                            eightN=sevenN
+                            eightS=sevenS
+                            sevenN=sixN
+                            sevenS=sixS
+                            sixN=fiveN
+                            sixS=fiveS
+                            fiveN=fourN
+                            fiveS=fourS
+                            fourN=fit
+                            fourS=x["State"]
+                        else:
+                            if float(fit) > float(fiveN): #or any of the others
+                                fifteenN=fourteenN
+                                fifteenS=fourteenS
+                                fourteenN=thirteenN
+                                fourteenS=thirteenS
+                                thirteenN=twelveN
+                                thirteenS=twelveS
+                                twelveN=elevenN
+                                twelveS=tenS
+                                elevenN=tenN
+                                elevenS=tenS
+                                tenN=nineN
+                                tenS=nineS
+                                nineN=eightN
+                                nineS=eightS
+                                eightN=sevenN
+                                eightS=sevenS
+                                sevenN=sixN
+                                sevenS=sixS
+                                sixN=fiveN
+                                sixS=fiveS
+                                fiveN=fit
+                                fiveS=x["State"]
+                            else:
+                                if float(fit) > float(sixN): #or any of the others
+                                    fifteenN=fourteenN
+                                    fifteenS=fourteenS
+                                    fourteenN=thirteenN
+                                    fourteenS=thirteenS
+                                    thirteenN=twelveN
+                                    thirteenS=twelveS
+                                    twelveN=elevenN
+                                    twelveS=tenS
+                                    elevenN=tenN
+                                    elevenS=tenS
+                                    tenN=nineN
+                                    tenS=nineS
+                                    nineN=eightN
+                                    nineS=eightS
+                                    eightN=sevenN
+                                    eightS=sevenS
+                                    sevenN=sixN
+                                    sevenS=sixS
+                                    sixN=fit
+                                    sixS=x["State"]
+                                else:
+                                    if float(fit) > float(sevenN): #or any of the others
+                                        fifteenN=fourteenN
+                                        fifteenS=fourteenS
+                                        fourteenN=thirteenN
+                                        fourteenS=thirteenS
+                                        thirteenN=twelveN
+                                        thirteenS=twelveS
+                                        twelveN=elevenN
+                                        twelveS=tenS
+                                        elevenN=tenN
+                                        elevenS=tenS
+                                        tenN=nineN
+                                        tenS=nineS
+                                        nineN=eightN
+                                        nineS=eightS
+                                        eightN=sevenN
+                                        eightS=sevenS
+                                        sevenN=fit
+                                        sevenS=x["State"]
+                                    else:
+                                        if float(fit) > float(eightN): #or any of the others
+                                            fifteenN=fourteenN
+                                            fifteenS=fourteenS
+                                            fourteenN=thirteenN
+                                            fourteenS=thirteenS
+                                            thirteenN=twelveN
+                                            thirteenS=twelveS
+                                            twelveN=elevenN
+                                            twelveS=tenS
+                                            elevenN=tenN
+                                            elevenS=tenS
+                                            tenN=nineN
+                                            tenS=nineS
+                                            nineN=eightN
+                                            nineS=eightS
+                                            eightN=fit
+                                            eightS=x["State"]
+                                        else:
+                                            if float(fit) > float(nineN): #or any of the others
+                                                fifteenN=fourteenN
+                                                fifteenS=fourteenS
+                                                fourteenN=thirteenN
+                                                fourteenS=thirteenS
+                                                thirteenN=twelveN
+                                                thirteenS=twelveS
+                                                twelveN=elevenN
+                                                twelveS=tenS
+                                                elevenN=tenN
+                                                elevenS=tenS
+                                                tenN=nineN
+                                                tenS=nineS
+                                                nineN=fit
+                                                nineS=x["State"]
+                                            else:
+                                                if float(fit) > float(tenN): #or any of the others
+                                                    fifteenN=fourteenN
+                                                    fifteenS=fourteenS
+                                                    fourteenN=thirteenN
+                                                    fourteenS=thirteenS
+                                                    thirteenN=twelveN
+                                                    thirteenS=twelveS
+                                                    twelveN=elevenN
+                                                    twelveS=tenS
+                                                    elevenN=tenN
+                                                    elevenS=tenS
+                                                    tenN=fit
+                                                    tenS=x["State"]
+                                                else:
+                                                    if float(fit) > float(elevenN): #or any of the others
+                                                        fifteenN=fourteenN
+                                                        fifteenS=fourteenS
+                                                        fourteenN=thirteenN
+                                                        fourteenS=thirteenS
+                                                        thirteenN=twelveN
+                                                        thirteenS=twelveS
+                                                        twelveN=elevenN
+                                                        twelveS=tenS
+                                                        elevenN=fit
+                                                        elevenS=x["State"]
+
     return Markup('{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" },{ y: %s, label: "%s" }' % (oneN,oneS,twoN,twoS,threeN,threeS,fourN,fourS,fiveN,fiveS,sixN,sixS,sevenN,sevenS,eightN,eightS,nineN,nineS,tenN,tenS,elevenN,elevenS,twelveN,twelveS,thirteenN,thirteenS,fourteenN,fourteenS,fifteenN,fifteenS))
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=54321)
+    app.run(debug=False, port=54321)
