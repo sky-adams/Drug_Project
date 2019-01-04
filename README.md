@@ -12,3 +12,5 @@ MVP
 info about drug usage in that state
 
 Project is finished
+
+https://drug-project.herokuapp.com/
